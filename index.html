@@ -231,34 +231,34 @@
     viewer.resize();  // Cesium 的更新方法
   }
 
-  ///  3D地图
+  //  3D地图
 
-  // Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTU0YWIzOS0xMzY5LTQyOTUtYWFkMi0yMDNiZWJlMjczMTIiLCJpZCI6MzA5NDYyLCJpYXQiOjE3NDkxMTIxMjB9.7o1Yp55GQJLpYIBvcPA7IaeuzRudrxkVqe8WZ1t4CjY';
-  // //
-  // const viewer = new Cesium.Viewer('map', {
-  //   terrainProvider: new Cesium.EllipsoidTerrainProvider(),  // 无需联网
-  //   //terrainProvider: Cesium.createWorldTerrain(),  // 高精度地形，联网加载
-  //   shouldAnimate: true,
-  // });
-
-
+  Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI1NTU0YWIzOS0xMzY5LTQyOTUtYWFkMi0yMDNiZWJlMjczMTIiLCJpZCI6MzA5NDYyLCJpYXQiOjE3NDkxMTIxMjB9.7o1Yp55GQJLpYIBvcPA7IaeuzRudrxkVqe8WZ1t4CjY';
+  //
   const viewer = new Cesium.Viewer('map', {
-    terrainProvider: new Cesium.EllipsoidTerrainProvider()  // 或你的地形提供者
+    terrainProvider: new Cesium.EllipsoidTerrainProvider(),  // 无需联网
+    //terrainProvider: Cesium.createWorldTerrain(),  // 高精度地形，联网加载
+    shouldAnimate: true,
   });
 
-  // 加载本地离线瓦片影像
-  const offlineImagery = new Cesium.UrlTemplateImageryProvider({
-    url: 'http://192.168.0.19:8001/{z}/{x}/{y}.png',  // 本地瓦片路径
-    maximumLevel: 18,
-    minimumLevel: 5,
-    credit: '离线瓦片地图'
-  });
-
-  viewer.imageryLayers.addImageryProvider(offlineImagery);
-
-  // const tileset = viewer.scene.primitives.add(
-  //         await Cesium.Cesium3DTileset.fromIonAssetId(96188),
-  // );
+ // // 离线地图
+ //  const viewer = new Cesium.Viewer('map', {
+ //    terrainProvider: new Cesium.EllipsoidTerrainProvider()  // 或你的地形提供者
+ //  });
+ //
+ //  // 加载本地离线瓦片影像
+ //  const offlineImagery = new Cesium.UrlTemplateImageryProvider({
+ //    url: 'http://192.168.0.19:8001/{z}/{x}/{y}.png',  // 本地瓦片路径
+ //    maximumLevel: 18,
+ //    minimumLevel: 5,
+ //    credit: '离线瓦片地图'
+ //  });
+ //
+ //  viewer.imageryLayers.addImageryProvider(offlineImagery);
+ //
+ //  const tileset = viewer.scene.primitives.add(
+ //          await Cesium.Cesium3DTileset.fromIonAssetId(96188),
+ //  );
 
 
 
